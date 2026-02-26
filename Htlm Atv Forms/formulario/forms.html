@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulários</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-200 flex flex-col min-h-screen">
+    <main class="flex-grow flex items-center justify-center">
+        <div class="w-[700px] border border-gray-300 p-6 rounded mt-6 bg-gray-50 rounded-lg mb-10">
+          <p class="text-2xl font-bold flex justify-center">Formulários para inscrição do curso</p>
+    <form id="formulario">
+           <fieldset class="mt-7 border rounded-lg p-5 pl-10 pr-10 border-blue-600">
+            <legend>Informaçoes Pessoais</legend>
+            <div class="mt-5">
+                <label class="block absolute left transition-transform duration-200 pl-1 text-gray-600 text-sm" id="text">Nome</label>
+                <input type="text" id="nome" name="nome" class="flex w-full  p-3 border border-gray-300 focus:border-transparent pl-6 peer rounded-lg bg-gray-50"placeholder="Digite seu nome">
+            </div>
+            <div>
+                <label class="block absolute left transition-transform duration-200 pl-1 text-gray-600 text-sm" id="cpf">CPF :</label>
+                <input type="number" id="inputcpf" name="cpf" class="flex w-full  p-3 border border-gray-300 focus:border-transparent pl-6 peer rounded-lg mt-6 bg-gray-50"placeholder="Ex: 444.444.444-43"  >
+            </div>
+            <div>
+                <label class="block absolute left transition-transform duration-200 pl-1 text-gray-600 text-sm" id="rg">RG :</label>
+                <input type="numeber" id="inputrg" name="rg" class="flex w-full  p-3 border border-gray-300 focus:border-transparent pl-6 peer rounded-lg mt-6 bg-gray-50"placeholder="Ex: 555.555.666-6"  >
+            </div>
+            <div>
+                <label>Gênero</label><br>
+                <input type="radio" name="sex" value="M" class="m-2"> Masculino
+                <br>
+                <input type="radio" name="sex" value="F" class="m-2"> Feminino
+                <br>
+            </div>
+            <div>
+                <label for="birthday" class="pl-1">Data de nascimento : </label>
+                <input type="date" id="today" name="today"class="rounded-lg m-3 mt-5" ><br>
+            </div>
+            <label for="cor">Qual sua cor favorita?</label>
+            <input type="color" id="cor" name="cor" value="#ff0000"class="w-16 h-10 p-1 border border-gray-300 rounded-md cursor-pointer">
+            <div class="mt-7">
+                <label for="foto" class="block text-sm font-medium text-gray-700 mb-1">
+                    Enviar uma foto
+                </label>
+                <input type="file" id="foto" name="foto" accept="image/*">
+            </div>
+            <div class="mb-4">
+                <label for="idade" class="block text-sm font-medium text-gray-700 mb-1">Idade</label>
+                <input type="number" id="idade" name="idade" min="18" max="100" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Digite sua idade" 
+                />
+            </div>
+            <div class="mb-4">
+                <label for="temperatura" class="block text-sm font-medium text-gray-700 mb-1">Temperatura (°C)</label>
+                <input type="range" id="temperatura" name="temperatura" min="-100" max="100" value="0"class="w-full"
+                />
+
+        </fieldset>
+        <fieldset class="mt-7 border rounded-lg p-5 pl-10 pr-10 border-blue-600">
+            <legend>Informaçoes de contato</legend>
+            <div>
+                <label class="block absolute left transition-transform duration-200 pl-1 text-gray-600 text-sm" id="telefone">Telefone :</label>
+                <input type="text" id="inputTelefone" name="telefone" class="flex w-full  p-3 border border-gray-300 focus:border-transparent pl-6 peer rounded-lg mt-6 bg-gray-50"placeholder="55(43)88845-4515" >
+            </div>
+            <div>
+                <label class="block absolute left transition-transform duration-200 pl-1 text-gray-600 text-sm" id="email">E-mail :</label>
+                <input type="email" id="inputEmail" name="email" class="flex w-full  p-3 border border-gray-300 focus:border-transparent pl-6 pee rounded-lg mt-6 bg-gray-50  " placeholder="jubulani@gmail.com" >
+            </div>
+        </fieldset>
+         <fieldset class="mt-7 border rounded-lg p-5 pl-10 pr-10 border-blue-600">
+                    <legend>Curso Desejado</legend>
+                    <div>
+                        <label for="curso" class="block text-sm font-medium text-gray-700 mb-1">Curso desejado</label>
+                        <select id="curso" name="curso" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Selecione</option>
+                            <option value="frontend">Desenvolvimento Front-End</option>
+                            <option value="backend">Desenvolvimento Back-End</option>
+                            <option value="fullstack">Full Stack</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="horarios" class="block text-sm font-medium text-gray-700 mb-1">Horários</label>
+                        <select id="horarios" name="horarios" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Selecione</option>
+                            <option value="Matutino">Matutino</option>
+                            <option value="Vespertino">Vespertino</option>
+                            <option value="Noturno">Noturno</option>
+                        </select>
+                    </div>
+                    <div class="mt-3">
+                        <label>O que deseja aprender :</label><br>
+                        <input type="checkbox" name="html" id="is-html" class="m-2"> HTML
+                        <br>
+                        <input type="checkbox" name="java" id="is-java" class="m-2"> Java <br>
+                        <input type="checkbox" name="python" id="is-python" class="m-2"> Python <br>
+                        <input type="checkbox" name="javascript" id="is-javascript" class="m-2"> JavaScript <br>
+                        <input type="checkbox" name="csharp" id="is-csharp" class="m-2"> C# <br>
+                    </div>
+                    <div class="mt-7">
+                        <label for="apresentacao" class="block text-sm font-medium text-gray-700 mb-1">
+                            Breve apresentação (por que você quer fazer o curso?)
+                        </label>
+                        <textarea id="apresentacao" name="apresentacao" rows="5" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50 resize-none" placeholder="Escreva aqui sua motivação..."></textarea>
+                    </div>
+                </fieldset>
+        <fieldset class="mt-7 border rounded-lg p-5 pl-10 pr-10 border-blue-600">
+            <legend class="text-lg font-medium text-gray-700">Endereço</legend>
+
+            <div class="mb-4">
+                <label for="rua" class="block absolute left transition-transform duration-200 pl-1 text-gray-600 text-sm"id="rua">Rua</label>
+                <input type="text" id="ruainput" name="rua" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"placeholder="Digite o nome da rua" required/>
+            </div>
+            
+            <div class="mb-4">
+                <label for="numero" class="block absolute left transition-transform duration-200 pl-1 text-gray-600 text-sm"id="numeror">Número</label>
+                <input type="number" id="numeroinput"  name="numero" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"placeholder="Número da residência"required/>
+            </div>
+            <div class="mb-4">
+                <label for="bairro" class="block absolute left transition-transform duration-200 pl-1 text-gray-600 text-sm"id="bairro">Bairro</label>
+                <input type="text" id="bairroinput" name="bairro" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"placeholder="Nome do bairro"required/>
+            </div>
+            
+           
+            <div class="mb-4">
+                <label for="complemento" class="block absolute left transition-transform duration-200 pl-1 text-gray-600 text-sm"id="complemento">Complemento</label>
+                <input type="text" id="complementoinput" name="complemento" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"placeholder="Apto, Bloco, etc."/>
+            </div>
+            <div class="mb-4">
+                <label for="cep" class="block absolute left transition-transform duration-200 pl-1 text-gray-600 text-sm"id="cep">CEP</label>
+                <input type="text" id="cepinput" name="cep" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"placeholder="Digite o CEP" required/>
+            </div>
+            <div class="mb-4">
+                <label for="cidade" class="block text-sm font-medium text-gray-700 mb-1">Cidade</label>
+                <select id="cidade" name="cidade" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"required>
+                    <option value="">Selecione a cidade</option>
+                    <option value="Londrina-PR">Londrina - PR</option>
+                    <option value="Cambé-PR">Cambé - PR</option>
+                    <option value="Rolândia-PR">Rolândia - PR</option>
+                    <option value="Ibiporã-PR">Ibiporã - PR</option>
+                </select>
+            </div>
+
+        </fieldset>
+        <div>
+         <div class="text-center">
+        <button type="submit" id="enviar" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-xl shadow-md mt-5">ENVIAR</button>
+         </div>
+        </div>
+        
+        </div>
+        <script>
+            const complementoElement = document.getElementById('complemento');
+            const complementoinputElement = document.getElementById('complementoinput');
+    
+            complementoinputElement.addEventListener('focus', () => {
+                complementoElement.classList.add('-translate-y-5');
+            });
+            complementoinputElement.addEventListener('blur', () => {
+                complementoElement.classList.remove('-translate-y-5');
+            });
+        </script>
+        <script>
+            const cepElement = document.getElementById('cep');
+            const cepinputElement = document.getElementById('cepinput');
+    
+            cepinputElement.addEventListener('focus', () => {
+                cepElement.classList.add('-translate-y-5');
+            });
+            cepinputElement.addEventListener('blur', () => {
+                cepElement.classList.remove('-translate-y-5');
+            });
+        </script>
+        <script>
+            const bairroElement = document.getElementById('bairro');
+            const bairroinputElement = document.getElementById('bairroinput');
+    
+            bairroinputElement.addEventListener('focus', () => {
+                bairroElement.classList.add('-translate-y-5');
+            });
+            bairroinputElement.addEventListener('blur', () => {
+                bairroElement.classList.remove('-translate-y-5');
+            });
+        </script>        
+    <script>
+        const ruaElement = document.getElementById('rua');
+        const ruainputElement = document.getElementById('ruainput');
+
+        ruainputElement.addEventListener('focus', () => {
+            ruaElement.classList.add('-translate-y-5');
+        });
+        ruainputElement.addEventListener('blur', () => {
+            ruaElement.classList.remove('-translate-y-5');
+        });
+    </script>
+    <script>
+        const numerorElement = document.getElementById('numeror');
+        const numeroinputElement = document.getElementById('numeroinput');
+
+        numeroinputElement.addEventListener('focus', () => {
+            numerorElement.classList.add('-translate-y-5');
+        });
+        numeroinputElement.addEventListener('blur', () => {
+            numerorElement.classList.remove('-translate-y-5');
+        });
+    </script>
+       
+    <script>
+        const textElement = document.getElementById('text');
+        const inputElement = document.getElementById('nome');
+
+        inputElement.addEventListener('focus', () => {
+            textElement.classList.add('-translate-y-5');
+        });
+        inputElement.addEventListener('blur', () => {
+            textElement.classList.remove('-translate-y-5');
+        });
+    </script>
+    <script>
+        const cpfElement = document.getElementById('cpf');
+        const inputcpfElement = document.getElementById('inputcpf');
+
+        inputcpfElement.addEventListener('focus', () => {
+            cpfElement.classList.add('-translate-y-5');
+        });
+        inputcpfElement.addEventListener('blur', () => {
+            cpfElement.classList.remove('-translate-y-5');
+        });
+    </script>
+    <script>
+        const rgElement = document.getElementById('rg');
+        const inputrgElement = document.getElementById('inputrg');
+
+        inputrgElement.addEventListener('focus', () => {
+            rgElement.classList.add('-translate-y-5');
+        });
+        inputrgElement.addEventListener('blur', () => {
+            rgElement.classList.remove('-translate-y-5');
+        });
+    </script>
+    <script>
+        const telefoneElement = document.getElementById('telefone');
+        const inputtelefoneElement = document.getElementById('inputTelefone');
+
+        inputtelefoneElement.addEventListener('focus', () => {
+            telefoneElement.classList.add('-translate-y-5');
+        });
+        inputtelefoneElement.addEventListener('blur', () => {
+            telefoneElement.classList.remove('-translate-y-5');
+        });
+    </script>
+    <script>
+        const emailElement = document.getElementById('email');
+        const inputEmailElement = document.getElementById('inputEmail');
+
+        inputEmailElement.addEventListener('focus', () => {
+            emailElement.classList.add('-translate-y-5');
+        });
+        inputEmailElement.addEventListener('blur', () => {
+            emailElement.classList.remove('-translate-y-5');
+        });
+    </script>
+    
+     </form>
+     <div class="mt-6 p-4 border border-gray-300 bg-gray-50 rounded-lg" id="jsonOutput">
+        <p class="text-lg font-semibold">Dados do Formulário (JSON):</p>
+        <pre id="jsonData" class="bg-gray-100 p-4 rounded-lg"></pre>
+     </div>
+    </main><script>
+        function gerarJSON() {
+            const nome = document.getElementById('nome').value;
+            const cpf = document.getElementById('inputcpf').value;
+            const sexo = document.querySelector('input[name="sex"]:checked') ? document.querySelector('input[name="sex"]:checked').value : '';
+            const nascimento = document.getElementById('today').value;
+            const cor = document.getElementById('cor').value;
+            const telefone = document.getElementById('inputTelefone').value;
+            const email = document.getElementById('inputEmail').value;
+            const curso = document.getElementById('curso').value;
+            const horarios = document.getElementById('horarios').value;
+            const apresentacao = document.getElementById('apresentacao').value;
+            const rua = document.getElementById('ruaInput').value;
+            const numero = document.getElementById('numeroInput').value;
+            const bairro = document.getElementById('bairroInput').value;
+            const cep = document.getElementById('cepInput').value;
+            const desejaAprender = [];
+                if (document.getElementById('is-html').checked) desejaAprender.push('HTML');
+                if (document.getElementById('is-java').checked) desejaAprender.push('Java');
+                if (document.getElementById('is-python').checked) desejaAprender.push('Python');
+                if (document.getElementById('is-javascript').checked) desejaAprender.push('JavaScript');
+                if (document.getElementById('is-csharp').checked) desejaAprender.push('C#');
+    
+            const dadosFormulario = {
+                nome: nome,
+                cpf: cpf,
+                sexo: sexo,
+                nascimento: nascimento,
+                corFavorita: cor,
+                telefone: telefone,
+                email: email,
+                curso: curso,
+                horarios: horarios,
+                apresentacao: apresentacao,
+                desejaAprender: desejaAprender,
+                endereco: {
+                    rua: rua,
+                    numero: numero,
+                    bairro: bairro,
+                    cep: cep
+                }
+        
+            };
+    
+            // Exibe os dados no formato JSON
+            document.getElementById('jsonData').textContent = JSON.stringify(dadosFormulario, null, 2);
+        }
+    
+        // Evento de click no botão ENVIAR
+        document.getElementById('enviar').addEventListener('click', function () {
+            gerarJSON();
+        });
+    </script>
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm">
+          <p>&copy; 2025 Curso Online. Todos os direitos reservados.</p>
+          <div class="flex space-x-4 mt-2 md:mt-0">
+            <a href="#" class="hover:underline">Política de Privacidade</a>
+            <a href="#" class="hover:underline">Termos de Uso</a>
+            <a href="#" class="hover:underline">Contato</a>
+          </div>
+        </div>
+      </footer>
+</body>
+
+</html>

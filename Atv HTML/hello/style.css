@@ -1,0 +1,88 @@
+body {
+    font-family: Arial;
+    background-color: lightgrey;
+}
+h2 {
+    color: #6600ff !important;
+    text-decoration: underline !important;
+}
+.paragrafo {
+    color: darkblue;
+    font-weight: bold;
+    font-style: oblique;
+}
+.imagem {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+.caixa {
+    border-color: royalblue;
+    border-width: 2px;
+    border-style: solid;
+    text-align: center;
+    margin: 16px;
+    padding: 20px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    margin-bottom: 60px;
+    transition: background-color 2s;
+}
+
+.caixa > span {
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.caixa:hover {
+    background-color: lightgreen;
+}
+
+.caixa > p {
+    color: red;
+    font-weight: bold;
+    display: none;
+}
+
+.caixa:hover > p {
+    display: block;
+}
+
+.botao {
+    width: 200px;
+    height: 150px;
+    border-width: 1px;
+    border-color: gray;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    transition: background-color 2s, transform 0.5s, border-radius 1s;
+}
+
+.botao:hover {
+    background-color: blue;
+    /* rotate(360deg) para rotacionar 
+       translateX(20px) para mover o objeto 
+    */
+    transform: scale(1.1); 
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.efeito-imagem {
+    transition: transform 0.5s;
+}
+
+.efeito-imagem:hover {
+    transform: scale(1.2);
+    box-shadow: gray 5px 5px 5px;
+}
+
+.borda {
+    border-color: darkgrey;
+    border-width: 4px;
+    border-style: double;
+}
